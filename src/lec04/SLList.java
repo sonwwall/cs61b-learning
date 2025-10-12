@@ -13,28 +13,25 @@ public class SLList{
         }
     }
 
-    //first item in the list
-    private IntNode first;
+    //这是一个虚拟节点放在list前面
+    //真正的第一个元素是sentinel.next
+    private IntNode sentinel;
     private int size;
 
     public SLList(int x){
-        first=new IntNode(x,null);
-        size++;
+        sentinel =new IntNode(0,null);
+        sentinel.next=new IntNode(x,null);
+        size=1;
     }
 
     public void addFirst(int x){
-        first=new IntNode(x,first);
+        sentinel.next =new IntNode(x, sentinel.next);
         size++;
     }
 
     public void addLast(int x){
 
-        IntNode p=first;
-        if (p==null){
-            first=new IntNode(x,null);
-            size++;
-            return;
-        }
+        IntNode p= sentinel;
 
         while(p.next!=null){
             p=p.next;
@@ -44,7 +41,7 @@ public class SLList{
     }
 
     public int getFirst(){
-        return first.item;
+        return sentinel.item;
     }
 
     public int size(){
@@ -52,7 +49,7 @@ public class SLList{
     }
 
     public SLList(){
-        first=null;
+        sentinel =new IntNode(0,null);//这个数字并不重要，只是必须有一个在这里罢了
         size=0;
     }
 
