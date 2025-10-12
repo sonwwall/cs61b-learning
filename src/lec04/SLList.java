@@ -28,7 +28,13 @@ public class SLList{
     }
 
     public void addLast(int x){
+
         IntNode p=first;
+        if (p==null){
+            first=new IntNode(x,null);
+            size++;
+            return;
+        }
 
         while(p.next!=null){
             p=p.next;
@@ -43,6 +49,11 @@ public class SLList{
 
     public int size(){
         return size;
+    }
+
+    public SLList(){
+        first=null;
+        size=0;
     }
 
 
