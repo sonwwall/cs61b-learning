@@ -5,8 +5,11 @@ public class SLListUser{
         SLList L=new SLList(15);
         L.addFirst(10);
         L.addFirst(5);
+        L.addLast(20);
         //L.first    private你不能直接访问
         System.out.println(L.getFirst());
+        System.out.println(L.size());
+        System.out.println(L.size());
     }
 
 }
