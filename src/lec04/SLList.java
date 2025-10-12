@@ -15,13 +15,16 @@ public class SLList{
 
     //first item in the list
     private IntNode first;
+    private int size;
 
     public SLList(int x){
         first=new IntNode(x,null);
+        size++;
     }
 
     public void addFirst(int x){
         first=new IntNode(x,first);
+        size++;
     }
 
     public void addLast(int x){
@@ -31,6 +34,7 @@ public class SLList{
             p=p.next;
         }
         p.next=new IntNode(x,null);
+        size++;
     }
 
     public int getFirst(){
@@ -38,15 +42,10 @@ public class SLList{
     }
 
     public int size(){
-        return size(first);
+        return size;
     }
 
-    public int size(IntNode p){
-        if(p==null){
-            return 0;
-        }
-        return 1+size(p.next);
-    }
+
 
 
 
