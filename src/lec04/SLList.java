@@ -6,11 +6,11 @@ package lec04;
 public class SLList<Mustard>{
     //嵌套类
     //这里加上static就不能访问IntNode以外的东西了
-    private  class MustarNode {
+    private  class MustardNode {
         public Mustard item;
-        public MustarNode next;
+        public MustardNode next;
 
-        public MustarNode(Mustard i, MustarNode n){
+        public MustardNode(Mustard i, MustardNode n){
             item=i;
             next=n;
         }
@@ -18,28 +18,28 @@ public class SLList<Mustard>{
 
     //这是一个虚拟节点放在list前面
     //真正的第一个元素是sentinel.next
-    private MustarNode sentinel;
+    private MustardNode sentinel;
     private int size;
 
     public SLList(int x){
-        sentinel =new MustarNode(null,null);
-        sentinel.next=new MustarNode(null,null);
+        sentinel =new MustardNode(null,null);
+        sentinel.next=new MustardNode(null,null);
         size=1;
     }
 
     public void addFirst(Mustard x){
-        sentinel.next =new MustarNode(x, sentinel.next);
+        sentinel.next =new MustardNode(x, sentinel.next);
         size++;
     }
 
     public void addLast(Mustard x){
 
-        MustarNode p= sentinel;
+        MustardNode p= sentinel;
 
         while(p.next!=null){
             p=p.next;
         }
-        p.next=new MustarNode(x,null);
+        p.next=new MustardNode(x,null);
         size++;
     }
 
@@ -52,7 +52,7 @@ public class SLList<Mustard>{
     }
 
     public SLList(){
-        sentinel =new MustarNode(null,null);//这个数字并不重要，只是必须有一个在这里罢了
+        sentinel =new MustardNode(null,null);//这个数字并不重要，只是必须有一个在这里罢了
         size=0;
     }
 
