@@ -12,6 +12,11 @@ public class arrayTrys {
         y=new int[3];
         z=new int[0];//指向一个空数组（长度为0）
 
+        int[] i;//一维
+        i=new int[3];
+        int[][] ii;//二维
+        ii=new int[3][3];
+
         int xL=x.length;//唯一的方法
         String[]s=new String[6];
         s[4]="hello";//String也是引用，这里存的是引用，指向字符串的地内存地址
